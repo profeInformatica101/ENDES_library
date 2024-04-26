@@ -5,7 +5,13 @@ import java.util.Date;
 import com.endes.biblioteca.enumerado.Language;
 
 
-
+/**
+ * @author Pablo
+ * @version 1.0
+ * 
+ * Esta clase representa un libro abstracto
+ * 
+ */
 public abstract class Book {
 
 	private String ISBN;
@@ -15,9 +21,18 @@ public abstract class Book {
 	private Date publication;
 	private Integer numberOfPages;
 	private Language language;
+	
+	/**
+	 * Método que obtiene el ISBN del libro
+	 * @return devuelve el ISBN del Libro
+	 */
 	public String getISBN() {
 		return ISBN;
 	}
+	/**
+	 * 
+	 * @param iSBN El identificador para el sistema internacional de numeración del libro  
+	 */
 	public void setISBN(String iSBN) {
 		ISBN = iSBN;
 	}
