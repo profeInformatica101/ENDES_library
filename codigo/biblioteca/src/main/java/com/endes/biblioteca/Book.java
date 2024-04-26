@@ -22,6 +22,22 @@ public abstract class Book {
 	private Integer numberOfPages;
 	private Language language;
 	
+	
+	
+	
+	public Book(String iSBN, String title, String summary, String publisher, Date publication, Integer numberOfPages,
+			Language language) {
+		super();
+		ISBN = iSBN;
+		this.title = title;
+		this.summary = summary;
+		this.publisher = publisher;
+		this.publication = publication;
+		this.numberOfPages = numberOfPages;
+		this.language = language;
+	}
+
+
 	/**
 	 * Método que obtiene el ISBN del libro
 	 * @return devuelve el ISBN del Libro
@@ -29,6 +45,8 @@ public abstract class Book {
 	public String getISBN() {
 		return ISBN;
 	}
+	
+
 	/**
 	 * 
 	 * @param iSBN El identificador para el sistema internacional de numeración del libro  
@@ -72,6 +90,14 @@ public abstract class Book {
 	public void setLanguage(Language language) {
 		this.language = language;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Book [ISBN=" + ISBN + ", title=" + title + ", summary=" + summary + ", publisher=" + publisher
+				+ ", publication=" + publication + ", numberOfPages=" + numberOfPages + ", language=" + language + "]";
+	}
+	
 	
 	
 	
