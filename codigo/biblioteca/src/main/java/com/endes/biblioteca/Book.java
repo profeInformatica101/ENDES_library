@@ -1,6 +1,8 @@
 package com.endes.biblioteca;
 
 import java.util.Date;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 import com.endes.biblioteca.enumerado.Language;
 
@@ -20,14 +22,24 @@ public abstract class Book {
 	private String publisher;
 	private Date publication;
 	private Integer numberOfPages;
-	private Language language;
-	
-	
-	
+	private Language language;	
+	private Set<Author> authors;
+
+    public void addAuthor(Author author) {
+        if (authors.add(author)) {  // add() returns true if this set did not already contain the specified element
+            author.addBook(this);
+        }
+    }
+
+    public Set<Author> getAuthors() {
+        return authors;
+    }
+
 	
 	public Book(String iSBN, String title, String summary, String publisher, Date publication, Integer numberOfPages,
 			Language language) {
 		super();
+		 this.authors = new LinkedHashSet<>();
 		ISBN = iSBN;
 		this.title = title;
 		this.summary = summary;
@@ -91,6 +103,12 @@ public abstract class Book {
 		this.language = language;
 	}
 
+	
+
+	
+	public void setAuthors(Set<Author> authors) {
+		this.authors = authors;
+	}
 
 	@Override
 	public String toString() {
